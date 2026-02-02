@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>pra ranyuda 🌸</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sakura -->
+  <div id="sakura-container"></div>
+
+  <!-- Mini guitarrista -->
+  <div id="guitarrista">🎸</div>
+
+  <div class="container">
+
+    <!-- MENU -->
+    <div class="conteudo active" id="menu">
+      <h1>🌸 Oi… 🌸</h1>
+      <p>Fiz isso com carinho.</p>
+
+      <div class="menu">
+        <button onclick="mostrar('prosseguir')">Proseguir</button>
+        <button onclick="mostrar('textos')">Textos</button>
+        <button onclick="mostrar('rock')">Rock</button>
+        <button onclick="mostrar('importante')">Importante</button>
+      </div>
+    </div>
+
+    <!-- PROSSEGUIR -->
+    <div class="conteudo" id="prosseguir">
+      <h2>🌸 Escolhe um caminho 🌸</h2>
+      <div class="menu">
+        <button onclick="mostrar('games')">🎮 Games</button>
+        <button onclick="mostrar('filmes')">🎬 Filmes</button>
+      </div>
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
+    <!-- GAMES -->
+    <div class="conteudo" id="games">
+      <h2>🎮 Games</h2>
+
+      <div class="menu">
+        <button onclick="mostrarGame('mine')">Minecraft</button>
+        <button onclick="mostrarGame('ludo')">Ludo</button>
+      </div>
+
+      <div class="game-texto" id="game-texto">
+        Escolhe um jogo 👀
+      </div>
+
+      <button class="voltar" onclick="mostrar('prosseguir')">Voltar</button>
+    </div>
+
+    <!-- FILMES -->
+    <div class="conteudo" id="filmes">
+      <h2>🎬 Filmes</h2>
+
+      <input id="filmeInput" placeholder="Digite um filme">
+      <button onclick="adicionarFilme()">Adicionar</button>
+
+      <ul id="listaFilmes"></ul>
+
+      <button class="voltar" onclick="mostrar('prosseguir')">Voltar</button>
+    </div>
+
+    <!-- TEXTOS -->
+    <div class="conteudo" id="textos">
+      <h2 class="titulo-livro">📖 Fragmentos</h2>
+
+      <div class="livro-medieval">
+        <p id="pagina-texto"></p>
+        <span id="numero-pagina"></span>
+      </div>
+
+      <!-- Snoop -->
+      <div id="snoop">🐶📖</div>
+
+      <div class="menu">
+        <button onclick="paginaAnterior()">←</button>
+        <button onclick="proximaPagina()">→</button>
+      </div>
+
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
+    <!-- ROCK -->
+    <div class="conteudo" id="rock">
+      <h2>🎸 Rock</h2>
+      <ul class="rock-lista">
+        <li>🎶 Guns N’ Roses – Sweet Child O’ Mine</li>
+        <li>🎶 Guns N’ Roses – November Rain</li>
+        <li>🎶 Velvet Revolver – Slither</li>
+        <li>🎶 Guns N’ Roses – Paradise City</li>
+<li>🎶 Guns N’ Roses – Welcome to the Jungle</li>
+
+<li>🎶 AC/DC – Back in Black</li>
+<li>🎶 AC/DC – Highway to Hell</li>
+
+<li>🎶 Metallica – Nothing Else Matters</li>
+<li>🎶 Metallica – Enter Sandman</li>
+
+<li>🎶 Led Zeppelin – Stairway to Heaven</li>
+<li>🎶 Led Zeppelin – Whole Lotta Love</li>
+
+<li>🎶 Pink Floyd – Wish You Were Here</li>
+<li>🎶 Pink Floyd – Comfortably Numb</li>
+
+<li>🎶 Queen – Love of My Life</li>
+<li>🎶 Queen – Bohemian Rhapsody</li>
+
+<li>🎶 Red Hot Chili Peppers – Under the Bridge</li>
+<li>🎶 Red Hot Chili Peppers – Californication</li>
+
+<li>🎶 Nirvana – Come As You Are</li>
+<li>🎶 Nirvana – Smells Like Teen Spirit</li>
+
+<li>🎶 Bon Jovi – Always</li>
+<li>🎶 Bon Jovi – Livin’ on a Prayer</li>
+
+      </ul>
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
+    <!-- IMPORTANTE -->
+    <div class="conteudo" id="importante">
+      <h2 id="titulo-importante">⚠️ Algo Importante</h2>
+      <p id="texto-importante">Você quer mesmo continuar?</p>
+
+      <div class="menu">
+        <button onclick="avancarImportante()">Continuar</button>
+        <button onclick="mostrar('menu')">Voltar</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
