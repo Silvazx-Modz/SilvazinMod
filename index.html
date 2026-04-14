@@ -2,31 +2,185 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Em manutenção</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: #1a0433;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Georgia, serif;
-      text-align: center;
-    }
-    h1 { font-size: 2rem; }
-    p { opacity: 0.8; }
-  </style>
+  <title>pra ranyuda 🌸</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-    <h1>🌸 Em manutenção 🌸</h1>
-    <p>Estou preparando algo especial…</p>
-    <p>Volte em breve 🤍</p>
+
+  <!-- Sakura -->
+  <div id="sakura-container"></div>
+
+  <!-- Mini guitarrista -->
+  <div id="guitarrista">🎸</div>
+
+  <div class="container">
+
+    <!-- MENU -->
+    <div class="conteudo active" id="menu">
+      <h1>🌸 Oi… 🌸</h1>
+      <p>Fiz isso com carinho.</p>
+
+      <div class="menu">
+        <button onclick="mostrar('prosseguir')">Prosseguir</button>
+        <button onclick="mostrar('textos')">Textos</button>
+        <button onclick="mostrar('rock')">Rock</button>
+        <button onclick="mostrar('cartinha-fofa')">Declaração</button>
+        <button onclick="mostrar('importante')">Importante</button>
+        <button onclick="mostrar('desabafar')">💭 Desabafar</button>
+        <button onclick="mostrar('cartinha-fofa')">💌 Cartinha</button>
+      </div>
+    </div>
+
+    <!-- PROSSEGUIR -->
+    <div class="conteudo" id="prosseguir">
+      <h2>🌸 Escolhe um caminho 🌸</h2>
+      <div class="menu">
+        <button onclick="mostrar('games')">🎮 Games</button>
+        <button onclick="mostrar('filmes')">🎬 Filmes</button>
+      </div>
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
+    <!-- GAMES -->
+    <div class="conteudo" id="games">
+      <h2>🎮 Games</h2>
+
+      <div class="menu">
+        <button onclick="mostrarGame('mine')">Minecraft</button>
+        <button onclick="mostrarGame('ludo')">Ludo</button>
+      </div>
+
+      <div class="game-texto" id="game-texto">
+        Escolhe um jogo 👀
+      </div>
+
+      <button class="voltar" onclick="mostrar('prosseguir')">Voltar</button>
+    </div>
+
+    <!-- FILMES -->
+    <div class="conteudo" id="filmes">
+      <h2>🎬 Filmes</h2>
+
+      <input id="filmeInput" placeholder="Digite um filme">
+      <button onclick="adicionarFilme()">Adicionar</button>
+
+      <ul id="listaFilmes"></ul>
+
+      <button class="voltar" onclick="mostrar('prosseguir')">Voltar</button>
+    </div>
+
+    <!-- TEXTOS -->
+    <div class="conteudo" id="textos">
+      <h2 class="titulo-livro">📖 Fragmentos</h2>
+
+      <div class="livro-medieval">
+        <p id="pagina-texto"></p>
+        <span id="numero-pagina"></span>
+      </div>
+
+      <div id="snoop">🐶📖</div>
+
+      <div class="menu">
+        <button onclick="paginaAnterior()">←</button>
+        <button onclick="proximaPagina()">→</button>
+      </div>
+
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
+    <!-- CARTINHA FOFA ❤️ -->
+    <div class="conteudo" id="cartinha-fofa">
+      <h2 class="titulo-livro">💌 de mim pra tu</h2>
+
+      <div class="livro-medieval">
+        <p>
+         oi rany, te escrevo essa carta com todo amor. nao sou bom com carta, entao releva.<br><br>
+
+bom dia, 14 agora. no caso, hoje fazem exatos 7 meses que a gente se conhece, muito tempo ne slk. e ao longo desses 7 meses, eu aprendi muito com voce.<br>
+muito sobre seu jeito, muito de como voce age ou como seus sentimentos funcionam. mesmo nao compreendendo certo as vezes, mas releva isso dai.<br>
+fiz umas cagadas ai que so me lascaram, mas estou tentando correr atras do prejuizo, vai que ne. por isso fiz essa carta pra voce do jeito que vovo fazia.<br>
+o veio era foda, feita totalmente da minha cabeça, por isso ta meio nada a ver.<br><br>
+
+iria te pedir desculpas, mas agora e tarde pra isso, ate porque voce ja me desculpou. toda via, voce nao disse nada sobre eu tentar reconquistar voce, por isso vou listar 10 motivos pra voce deixar eu tentar novamente<br>
+(dar outra chance a eu).<br><br>
+
+motivo 1, irei ser uma pessoa melhor pra voce.<br>
+motivo 2, vou abandonar a vida errada e viver so pra voce.<br><br>
+motivo 3, vou cuidar bem de voce sempre.<br>
+motivo 4, porque eu te amo e pq a gente vai casar com certeza, brunessa pode confirmar isso.<br>
+motivo 5, vih tambem aceita, eu acho.<br>
+motivo 6, sua mae aceita.<br>
+motivo 7, seu pai tambem, eu espero.<br>
+motivo 8, kauan tmb aceita.<br><br>
+
+cabo os motivos, mas eu so fiz isso pra demonstrar o quanto eu te amo e pra mostrar que eu to realmente disposto a mudar e fazer as coisas da forma certa, sem erros, sem marmeladas.<br>
+so verdades e verdades. e por gentileza nao fuja de mim dnv kkkk, se nao ai complica. inclusive, eu pretendo te assumir dia 12 de junho, por isso vou me esforçar pra te reconquistar ate la, fica vendo.
+        </p>
+      </div>
+
+      <div class="audio-placeholder">
+        <audio id="musicaDeclaracao" loop>
+          <source src="audio/golden-brown-slowed.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+      <button onclick="toggleMusica()">🎵 Música</button>
+    </div>
+
+    <!-- ROCK -->
+    <div class="conteudo" id="rock">
+      <h2>🎸 Rock</h2>
+      <ul class="rock-lista">
+        <li>🎶 Guns N’ Roses – Sweet Child O’ Mine</li>
+        <li>🎶 Guns N’ Roses – November Rain</li>
+        <li>🎶 Velvet Revolver – Slither</li>
+        <li>🎶 AC/DC – Back in Black</li>
+        <li>🎶 Metallica – Nothing Else Matters</li>
+        <li>🎶 Queen – Love of My Life</li>
+      </ul>
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
+    <!-- IMPORTANTE -->
+    <div class="conteudo" id="importante">
+      <h2 id="titulo-importante">⚠️ Algo Importante</h2>
+      <p id="texto-importante">Você quer mesmo continuar?</p>
+
+      <div class="menu">
+        <button onclick="avancarImportante()">Continuar</button>
+        <button onclick="mostrar('menu')">Voltar</button>
+      </div>
+    </div>
+
+    <!-- DESABAFAR -->
+    <div class="conteudo" id="desabafar">
+      <h2>💭 Pode desabafar comigo</h2>
+
+      <div class="chat" id="chat">
+        <div class="bot">Oi… eu tô aqui pra te ouvir 🤍</div>
+      </div>
+
+      <input
+        type="text"
+        id="entrada"
+        placeholder="Escreve o que você tá sentindo..."
+        onkeydown="if(event.key==='Enter') enviarMensagem()"
+      >
+
+      <button onclick="enviarMensagem()">Enviar</button>
+      <button class="voltar" onclick="mostrar('menu')">Voltar</button>
+    </div>
+
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
 
 
