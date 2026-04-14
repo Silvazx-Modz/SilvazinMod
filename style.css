@@ -1,81 +1,336 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FUNDO */
 body {
   font-family: 'Cinzel', serif;
-  background: linear-gradient(180deg, #1b0f2b, #2b124c);
+  background: linear-gradient(135deg, #1a1a1a, #2b0f1a);
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease;
   overflow: hidden;
 }
 
+/* CONTAINER PRINCIPAL */
 .container {
-  max-width: 600px;
-  margin: auto;
-  padding-top: 70px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.conteudo { display: none; }
-.conteudo.active { display: block; }
-
-button {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover { transform: scale(1.05); }
-
-.livro-medieval {
-  background: #f3e7c6;
-  color: #3b2f1c;
+  width: 95%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
   padding: 30px;
-  border-radius: 10px;
-  margin: 20px auto;
+  box-shadow: 
+    0 0 40px rgba(255, 0, 100, 0.2),
+    inset 0 0 20px rgba(255,255,255,0.03);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#snoop {
-  position: absolute;
-  right: 20px;
-  bottom: 80px;
-  font-size: 40px;
-  transition: transform 0.5s;
+.container:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 0 50px rgba(255, 0, 100, 0.3);
 }
 
-#guitarrista {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  font-size: 40px;
-  animation: tocar 1s infinite alternate;
+/* TITULOS */
+h1, h2 {
+  margin-bottom: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-@keyframes tocar {
-  from { transform: rotate(-5deg); }
-  to { transform: rotate(5deg); }
+h1 {
+  font-size: 2.2rem;
 }
 
-.game-texto {
+h2 {
+  font-size: 1.6rem;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
   margin-top: 20px;
-  padding: 15px;
+}
+
+/* BOTÕES */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff4d88, #ff0066);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+/* brilho no hover */
+button::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(255, 0, 100, 0.8);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* BOTÃO VOLTAR */
+.voltar {
+  margin-top: 20px;
+  background: #333;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  display: none;
+}
+
+.conteudo.active {
+  display: block;
+  animation: fade 0.4s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LIVRO MEDIEVAL */
+.livro-medieval {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 20px;
+  border-radius: 15px;
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: left;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+/* ✍️ CURSOR DA DIGITAÇÃO */
+.livro-medieval p::after {
+  content: "|";
+  margin-left: 5px;
+  animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* INPUT */
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  width: 70%;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* LISTA */
+ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+/* CHAT */
+.chat {
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* SCROLL BONITO */
+.chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background: #ff0066;
   border-radius: 10px;
 }
 
-.minecraft { background: #3a5f0b; }
-.ludo { background: #a83232; }
-
-#sakura-container span {
-  position: absolute;
-  top: -10px;
-  animation: cair linear infinite;
+/* MENSAGENS */
+.bot {
+  background: #444;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  max-width: 80%;
 }
 
-@keyframes cair {
-  to { transform: translateY(110vh) rotate(360deg); }
+.user {
+  background: #ff0066;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  max-width: 80%;
 }
 
+/* ANIMAÇÃO MENSAGENS */
+.bot, .user {
+  animation: fadeMsg 0.3s ease;
+}
+
+@keyframes fadeMsg {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ EFEITO DE LUZ NO MOUSE */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 0, 100, 0.18), transparent 40%);
+  z-index: 0;
+}
+
+/* 🎥 FUNDO RESPIRANDO */
+body {
+  animation: fundoRespira 6s ease-in-out infinite alternate;
+}
+
+@keyframes fundoRespira {
+  0% {
+    background: linear-gradient(135deg, #1a1a1a, #2b0f1a);
+  }
+  100% {
+    background: linear-gradient(135deg, #222, #3a0f2a);
+  }
+}
+
+/* SUAVIZAÇÃO */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ======================= */
+/* 🎥 PARALLAX SUAVE */
+/* ======================= */
+.container {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+/* ======================= */
+/* 💌 FINAL SURPRESA */
+/* ======================= */
+#final-surpresa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 999;
+}
+
+#final-surpresa.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.final-box {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 0, 100, 0.4);
+  animation: surgir 0.5s ease;
+}
+
+.final-box h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.final-box p {
+  font-size: 1.2rem;
+}
+
+@keyframes surgir {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 
 
